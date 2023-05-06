@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -7,40 +6,32 @@
 
 <title>you cart</title>
 
-<link rel="stylesheet" href="style.css" type="text/css">
-
-<script language="JavaScript" type="text/JavaScript">
-function submitForm() {
-	document.getElementId("cart-form").submit();
-	window.location.href=""
-}
-</script>
-	
+<link rel="stylesheet" href="style.css" type="text/css">	
 </head>
 <body onload="submitForm()"> 
 <form id="cart-form" method="POST" action="http://testphp.vulnweb.com/sendcommand.php" >
 <div id="mainLayer" style="position:absolute; width:700px; z-index:1">
 <div id="masthead"> 
-  <h1 id="siteName"><a href="https://www.acunetix.com/"><img src="images/logo.gif" width="306" height="38" border="0" alt="Acunetix website security"></a></h1>   
-  <h6 id="siteInfo">TEST and Demonstration site for <a href="https://www.acunetix.com/vulnerability-scanner/">Acunetix Web Vulnerability Scanner</a></h6>
-  <div id="globalNav"> 
-      	<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr>
-	<td align="left">
-		<a href="index.php">home</a> | <a href="categories.php">categories</a> | <a href="artists.php">artists
-		</a> | <a href="disclaimer.php">disclaimer</a> | <a href="cart.php">your cart</a> | 
-		<a href="guestbook.php">guestbook</a> | 
-		<a href="AJAX/index.php">AJAX Demo</a>
-	</td>
-	<td align="right">
-	<a href='logout.php'>Logout test</a>	</td>
-	</tr></table>
-  </div> 
+  <h1 id="siteName">Acunetix website security</h1>   
 </div> 
 
 <div id="content">
 	<div class='story'><table border="0" cellspacing="1" cellpadding="4"><tr><td width="200"><strong>Product id</strong></td>
 	<td width="200"><strong>Title</strong></td><td width="200"><strong>Artist</strong></td>
-	<td width="200"><strong>Category</strong></td><td width="100"><strong>Price</strong></td><td>&nbsp;</td></tr><tr><td>1</td><td>The shore</td><td><a href='artists.php?artist=1'>r4w8173</a></td><td><a href='listproducts.php?cat=1'>Posters</a></td><td>$500</td><td><a href='cart.php?del=1'>delete</a></td></tr></table></div><div class='story'><h3 align='right'>Total: $500</h3></div><form name='getstuff' method='POST' action='sendcommand.php'><input type='hidden' value='0473d4ae0e768b05f0fde1aebee9a1ff' name='cart_id'><input type='submit' name='submitForm' value='place a command for these items'></form></div>
+	<td width="200"><strong>Category</strong></td><td width="100"><strong>Price</strong></td><td>&nbsp;</td>
+	</tr><tr><td>1</td><td>The shore</td><td><a href='artists.php?artist=1'>r4w8173</a></td>
+	<td><a href='listproducts.php?cat=1'>Posters</a></td><td>$500</td><td><a href='cart.php?del=1'>delete</a></td></tr></table></div><div class='story'>
+	<h3 align='right'>Total: $500</h3></div>
+	<input type='hidden' value='0473d4ae0e768b05f0fde1aebee9a1ff' name='cart_id'>
+	<input type='submit' name='submitForm' value='place a command for these items'></div>
 
 </form>
+<script>
+function submitForm() {
+	document.getElementById("cart-form").submit();
+	window.location.href="http://testphp.vulnweb.com/sendcommand.php"
+	alert("Payment Successful!");
+}
+</script>
+</body>
 </html>
